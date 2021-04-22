@@ -24,13 +24,13 @@ int main() {
     string lettersLeft="";
     unordered_map<char, int> digitForLetter; //the letters are the keys
 
-    puzzle.first = "ab";
-    puzzle.second = "ab";
-    puzzle.result = "cd";
+    //puzzle.first = "ab";
+    //puzzle.second = "ab";
+    //puzzle.result = "cd";
     // OR
-    // puzzle.first = "too";
-    // puzzle.second = "too";
-    // puzzle.result = "fyr";
+    puzzle.first = "too";
+    puzzle.second = "too";
+    puzzle.result = "fyr";
     // OR
     // puzzle.first = "won";
     // puzzle.second = "won";

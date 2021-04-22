@@ -1,4 +1,4 @@
-#include <stdio.h> //all libraries
+#include <stdio.h>
 #include <string>
 #include <vector>
 #include <list>
@@ -12,8 +12,7 @@ using namespace std;
 struct puzzle_t {
    string first, second, result;
 };
-//int count=0;
-void showlist(list <char>);
+
 bool allDiff(puzzle_t, string, unordered_map<char, int>, int);
 bool solutionExists(puzzle_t, unordered_map<char, int>);
 bool checkDigitsNotEqual(unordered_map<char, int>);
@@ -22,18 +21,33 @@ bool checkDigitsNotEqual(unordered_map<char, int>);
 int main() {
     int base = 9; //e.g. 9, 5, 1 etc
     puzzle_t puzzle;
+    string lettersLeft="";
+    unordered_map<char, int> digitForLetter; //the letters are the keys
+
     puzzle.first = "ab";
     puzzle.second = "ab";
     puzzle.result = "cd";
-    string lettersLeft="badc"; 
-    // puzzle_t puzzle;
+    // OR
+    // puzzle.first = "too";
+    // puzzle.second = "too";
+    // puzzle.result = "fyr";
+    // OR
+    // puzzle.first = "won";
+    // puzzle.second = "won";
+    // puzzle.result = "trr";
+    // OR
     // puzzle.first = "won";
     // puzzle.second = "won";
     // puzzle.result = "too";
-    // string lettersLeft="nowt"; 
-    unordered_map<char, int> digitForLetter; //the letters are the keys
 
-    for(int i=0; i<lettersLeft.length(); i++) //initialization 
+    //initialization of lettersLeft
+    for(int i=0; i<puzzle.first.length(); i++) 
+        lettersLeft += puzzle.first[puzzle.first.length()-1-i];
+    for(int i=0; i<puzzle.result.length(); i++) 
+        lettersLeft += puzzle.result[puzzle.result.length()-1-i];
+    
+    //initialization of digitsForLetter
+    for(int i=0; i<lettersLeft.length(); i++) 
         digitForLetter.insert(make_pair(lettersLeft[i], lettersLeft.length()-1-i));
 
     if(lettersLeft.length() > base+1) {

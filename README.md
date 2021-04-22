@@ -1,7 +1,7 @@
 # COMP311_set1_exercise6
 Exercise 6
 
-First af all the code is in C++ as I saw that it should be in C or Java too late and converting it to Java was causing time consuming errors that I did not have the energy to solve at the time.
+First af all the code is in C++ as I saw that it should be in C or Java too late and converting it to C or Java (I tried Java because strings and unordered hash maps are difficult in c) was causing time consuming errors that I did not manage to solve at that time.
 
 This code finds a solution for inputs like ab+ab=cd, but does not find a solution for the given inputs. This is not because of the algorithm (which is correct), but because inputs like to+to=for/too+too=for/won+won=too contain the same letter (o) in the addents(to,too,won) and also in the result(for/too) and my code cannot handle this (weakness). But it can calculate correctly an input like to+to=fyr! Also won+won=trr etc. So, the logic of the algorithm is correct and it works.
 
